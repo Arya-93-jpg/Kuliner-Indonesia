@@ -1,1 +1,1065 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kuliner Nusantara</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f5ef;
+            color: #222;
+        }
+
+        /* NAVBAR */
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #285b32;
+        }
+
+        .cart-button {
+            border: none;
+            background: #285b32;
+            color: white;
+            padding: 11px 17px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 60px 7%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(
+                120deg,
+                #fff6e6,
+                #eaf3e8
+            );
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #c87532;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin: 18px 0;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 13px 23px;
+            background: #285b32;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .hero img {
+            width: 45%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+
+        /* PRODUK */
+
+        .produk {
+            padding: 60px 7%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .judul h2 {
+            font-size: 32px;
+        }
+
+        .judul p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        /* CARD */
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+        }
+
+        .deskripsi {
+            color: #777;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .harga {
+            color: #c76520;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+
+        /* JUMLAH */
+
+        .jumlah {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 6px;
+        }
+
+        .jumlah button {
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 10px;
+            background: #eaf1e8;
+            color: #285b32;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .jumlah span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /* TAMBAH KERANJANG */
+
+        .tambah {
+            width: 100%;
+            margin-top: 12px;
+            padding: 13px;
+            border: none;
+            border-radius: 12px;
+            background: #285b32;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+
+        /* KERANJANG */
+
+        .keranjang {
+            margin: 10px 7% 60px;
+            padding: 30px;
+            background: #17351e;
+            color: white;
+            border-radius: 25px;
+        }
+
+        .keranjang h2 {
+            margin-bottom: 20px;
+        }
+
+        .pesanan {
+            padding: 10px 0;
+            border-bottom: 1px solid #ffffff30;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .kosong {
+            color: #ccc;
+        }
+
+        .total {
+            color: #ffad45;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+
+        /* WHATSAPP */
+
+        .whatsapp {
+            border: none;
+            background: #25d366;
+            color: white;
+            padding: 15px 23px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #111d14;
+            color: #ccc;
+            text-align: center;
+            padding: 25px;
+        }
+
+
+        /* HP */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 45px 6%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero img {
+                width: 100%;
+                height: 250px;
+            }
+
+            .produk {
+                padding: 45px 6%;
+            }
+
+            .produk-container {
+                grid-template-columns: 1fr;
+            }
+
+            .keranjang {
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+        🌿 KULINERKU
+    </div>
+
+    <button
+        class="cart-button"
+        onclick="document.getElementById('keranjang').scrollIntoView()">
+
+        🛒 Keranjang
+        (<span id="jumlahKeranjang">0</span>)
+
+    </button>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="badge">
+            MAKANAN & MINUMAN TRADISIONAL
+        </span>
+
+        <h1>
+            Nikmati Kelezatan
+            Kuliner Nusantara
+        </h1>
+
+        <p>
+            Nikmati makanan dan minuman khas
+            dengan cita rasa tradisional yang
+            menggugah selera.
+        </p>
+
+        <a
+            href="#produk"
+            class="hero-button">
+
+            Lihat Menu
+
+        </a>
+
+    </div>
+
+
+    <img
+        src="cingur.jpg"
+        alt="Rujak Cingur">
+
+</section>
+
+
+
+<!-- PRODUK -->
+
+<section
+    class="produk"
+    id="produk">
+
+    <div class="judul">
+
+        <h2>
+            🍽️ Menu Pilihan
+        </h2>
+
+        <p>
+            Pilih makanan favoritmu
+        </p>
+
+    </div>
+
+
+
+    <div class="produk-container">
+
+
+        <!-- KRECO -->
+
+        <div class="card">
+
+            <img
+                src="kreco.jpg"
+                alt="Kreco">
+
+            <div class="card-content">
+
+                <h3>
+                    🍘 Kreco
+                </h3>
+
+                <p class="deskripsi">
+                    Kreco gurih dengan bumbu
+                    khas yang nikmat.
+                </p>
+
+                <div class="harga">
+                    Rp10.000
+                </div>
+
+
+                <div class="jumlah">
+
+                    <button
+                        onclick="kurangKreco()">
+
+                        −
+
+                    </button>
+
+                    <span id="krecoJumlah">
+                        0
+                    </span>
+
+                    <button
+                        onclick="tambahKreco()">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="tambah"
+                    onclick="keranjangKreco()">
+
+                    🛒 Tambah ke Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JANGGELAN -->
+
+        <div class="card">
+
+            <img
+                src="janggelan.jpg"
+                alt="Es Janggelan Segar">
+
+            <div class="card-content">
+
+                <h3>
+                    🥤 Es Janggelan
+                </h3>
+
+                <p class="deskripsi">
+                    Minuman janggelan segar
+                    dan menyegarkan.
+                </p>
+
+                <div class="harga">
+                    Rp8.000
+                </div>
+
+
+                <div class="jumlah">
+
+                    <button
+                        onclick="kurangJanggelan()">
+
+                        −
+
+                    </button>
+
+                    <span id="janggelanJumlah">
+                        0
+                    </span>
+
+                    <button
+                        onclick="tambahJanggelan()">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="tambah"
+                    onclick="keranjangJanggelan()">
+
+                    🛒 Tambah ke Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RUJAK -->
+
+        <div class="card">
+
+            <img
+                src="cingur.jpg"
+                alt="Rujak Cingur">
+
+            <div class="card-content">
+
+                <h3>
+                    🥗 Rujak Cingur
+                </h3>
+
+                <p class="deskripsi">
+                    Rujak cingur khas Jawa Timur
+                    dengan bumbu petis.
+                </p>
+
+                <div class="harga">
+                    Rp15.000
+                </div>
+
+
+                <div class="jumlah">
+
+                    <button
+                        onclick="kurangRujak()">
+
+                        −
+
+                    </button>
+
+                    <span id="rujakJumlah">
+                        0
+                    </span>
+
+                    <button
+                        onclick="tambahRujak()">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="tambah"
+                    onclick="keranjangRujak()">
+
+                    🛒 Tambah ke Keranjang
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- KERANJANG -->
+
+<section
+    class="keranjang"
+    id="keranjang">
+
+    <h2>
+        🛍️ Pesanan Kamu
+    </h2>
+
+
+    <div id="isiKeranjang">
+
+        <p class="kosong">
+            Belum ada pesanan.
+        </p>
+
+    </div>
+
+
+    <div
+        class="total"
+        id="total">
+
+        Total: Rp0
+
+    </div>
+
+
+    <button
+        class="whatsapp"
+        onclick="checkoutWhatsApp()">+6285189018896
+
+        💬 Checkout via WhatsApp
+
+    </button>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    ©Contact Person:📞+6285189018896
+    -Muhammad Arya Fitradiansyah
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   JUMLAH PRODUK
+========================= */
+
+var kreco = 0;
+
+var janggelan = 0;
+
+var rujak = 0;
+
+
+
+/* =========================
+   TAMBAH KRECO
+========================= */
+
+function tambahKreco() {
+
+    kreco = kreco + 1;
+
+    document.getElementById(
+        "krecoJumlah"
+    ).innerHTML = kreco;
+
+}
+
+
+/* KURANG KRECO */
+
+function kurangKreco() {
+
+    if (kreco > 0) {
+
+        kreco = kreco - 1;
+
+        document.getElementById(
+            "krecoJumlah"
+        ).innerHTML = kreco;
+
+    }
+
+}
+
+
+
+/* =========================
+   TAMBAH JANGGELAN
+========================= */
+
+function tambahJanggelan() {
+
+    janggelan = janggelan + 1;
+
+    document.getElementById(
+        "janggelanJumlah"
+    ).innerHTML = janggelan;
+
+}
+
+
+/* KURANG JANGGELAN */
+
+function kurangJanggelan() {
+
+    if (janggelan > 0) {
+
+        janggelan = janggelan - 1;
+
+        document.getElementById(
+            "janggelanJumlah"
+        ).innerHTML = janggelan;
+
+    }
+
+}
+
+
+
+/* =========================
+   TAMBAH RUJAK
+========================= */
+
+function tambahRujak() {
+
+    rujak = rujak + 1;
+
+    document.getElementById(
+        "rujakJumlah"
+    ).innerHTML = rujak;
+
+}
+
+
+/* KURANG RUJAK */
+
+function kurangRujak() {
+
+    if (rujak > 0) {
+
+        rujak = rujak - 1;
+
+        document.getElementById(
+            "rujakJumlah"
+        ).innerHTML = rujak;
+
+    }
+
+}
+
+
+
+/* =========================
+   TAMBAH KE KERANJANG
+========================= */
+
+function keranjangKreco() {
+
+    if (kreco == 0) {
+
+        kreco = 1;
+
+        document.getElementById(
+            "krecoJumlah"
+        ).innerHTML = 1;
+
+    }
+
+    tampilkanKeranjang();
+
+}
+
+
+function keranjangJanggelan() {
+
+    if (janggelan == 0) {
+
+        janggelan = 1;
+
+        document.getElementById(
+            "janggelanJumlah"
+        ).innerHTML = 1;
+
+    }
+
+    tampilkanKeranjang();
+
+}
+
+
+function keranjangRujak() {
+
+    if (rujak == 0) {
+
+        rujak = 1;
+
+        document.getElementById(
+            "rujakJumlah"
+        ).innerHTML = 1;
+
+    }
+
+    tampilkanKeranjang();
+
+}
+
+
+
+/* =========================
+   TAMPILKAN KERANJANG
+========================= */
+
+function tampilkanKeranjang() {
+
+    var isi = "";
+
+    var total = 0;
+
+    var jumlah = 0;
+
+
+
+    if (kreco > 0) {
+
+        var hargaKreco =
+            kreco * 10000;
+
+        isi +=
+            "<div class='pesanan'>" +
+            "<span>Kreco × " +
+            kreco +
+            "</span>" +
+            "<span>Rp" +
+            hargaKreco.toLocaleString("id-ID") +
+            "</span>" +
+            "</div>";
+
+        total = total + hargaKreco;
+
+        jumlah = jumlah + kreco;
+
+    }
+
+
+
+    if (janggelan > 0) {
+
+        var hargaJanggelan =
+            janggelan * 8000;
+
+        isi +=
+            "<div class='pesanan'>" +
+            "<span>Es Janggelan × " +
+            janggelan +
+            "</span>" +
+            "<span>Rp" +
+            hargaJanggelan.toLocaleString("id-ID") +
+            "</span>" +
+            "</div>";
+
+        total =
+            total + hargaJanggelan;
+
+        jumlah =
+            jumlah + janggelan;
+
+    }
+
+
+
+    if (rujak > 0) {
+
+        var hargaRujak =
+            rujak * 15000;
+
+        isi +=
+            "<div class='pesanan'>" +
+            "<span>Rujak Cingur × " +
+            rujak +
+            "</span>" +
+            "<span>Rp" +
+            hargaRujak.toLocaleString("id-ID") +
+            "</span>" +
+            "</div>";
+
+        total =
+            total + hargaRujak;
+
+        jumlah =
+            jumlah + rujak;
+
+    }
+
+
+
+    if (jumlah == 0) {
+
+        isi =
+            "<p class='kosong'>" +
+            "Belum ada pesanan." +
+            "</p>";
+
+    }
+
+
+
+    document.getElementById(
+        "isiKeranjang"
+    ).innerHTML = isi;
+
+
+    document.getElementById(
+        "total"
+    ).innerHTML =
+        "Total: Rp" +
+        total.toLocaleString("id-ID");
+
+
+    document.getElementById(
+        "jumlahKeranjang"
+    ).innerHTML = jumlah;
+
+}
+
+
+
+/* =========================
+   CHECKOUT WHATSAPP
+========================= */
+
+function checkoutWhatsApp() {
+
+    if (
+        kreco == 0 &&
+        janggelan == 0 &&
+        rujak == 0
+    ) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+
+    var pesan = "Halo, saya ingin memesan:%0A%0A";
+
+    var total = 0;
+
+
+    /* KRECO */
+
+    if (kreco > 0) {
+
+        var hargaKreco = kreco * 10000;
+
+        pesan +=
+            "🍘 Kreco x" +
+            kreco +
+            " = Rp" +
+            hargaKreco.toLocaleString("id-ID") +
+            "%0A";
+
+        total += hargaKreco;
+    }
+
+
+    /* ES JANGGELAN */
+
+    if (janggelan > 0) {
+
+        var hargaJanggelan = janggelan * 8000;
+
+        pesan +=
+            "🥤 Es Janggelan x" +
+            janggelan +
+            " = Rp" +
+            hargaJanggelan.toLocaleString("id-ID") +
+            "%0A";
+
+        total += hargaJanggelan;
+    }
+
+
+    /* RUJAK CINGUR */
+
+    if (rujak > 0) {
+
+        var hargaRujak = rujak * 15000;
+
+        pesan +=
+            "🥗 Rujak Cingur x" +
+            rujak +
+            " = Rp" +
+            hargaRujak.toLocaleString("id-ID") +
+            "%0A";
+
+        total += hargaRujak;
+    }
+
+
+    /* TOTAL */
+
+    pesan +=
+        "%0A━━━━━━━━━━━━━━%0A" +
+        "💰 Total: Rp" +
+        total.toLocaleString("id-ID") +
+        "%0A━━━━━━━━━━━━━━";
+
+
+    /* DATA PEMESAN */
+
+    pesan +=
+        "%0A%0A👤 Nama:%0A" +
+        "📍 Alamat:%0A" +
+        "📝 Catatan:";
+
+
+    /* NOMOR WHATSAPP TOKO */
+
+    var nomor = "6285189018896";
+
+
+    /* LINK WHATSAPP */
+
+    var link =
+        "https://api.whatsapp.com/send?phone=" +6285189018896
+        nomor +
+        "&text=" +
+        pesan;
+
+
+    window.location.href = link;
+
+}
+
+
+
+    /*
+    ====================================
+    GANTI NOMOR WHATSAPP DI BAWAH
+    ====================================
+    */
+
+    var nomor =
+        "6285189018896";
+
+
+
+    var link =
+        "https://wa.me/" +
+        nomor +
+        "?text=" +
+        pesan;
+
+
+
+    window.location.href = link;
+
+}
+
+
+</script>
+
+
+</body>
+</html>
